@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="starter">
+   <ion-view>
+    <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light" style="background:red;">
+     <div class="tabs" style="background:#fff;  border: none;position: absolute;top: 18px;">
+      <a class="tab-item active" href="#" style="color:#000;border-bottom: 4px solid #db9e36 !important;margin: 0px 10px;height: 32px;">
+        <h2>All</h2>
+      </a>
+      <a class="tab-item" href="templates/all.html" style="color:#000;">
+        <h2>My Gigs</h2> 
+      </a>
+      <a class="tab-item" href="#" style="color:#000;">
+        <h2>My Bids</h2>
+      </a>
+      <a class="tab-item" href="#" style="color:#000;">
+        <h2>My Bids</h2>
+      </a>
+    </div>
+  </div>
+   <div class="row browse_row" style="border-top: 3px solid #db9e36;margin-top: 73px;">
+    <div class="col col-20" style="padding: 0;">
+      <img src="img/person1.jpg" class="browse_list_img" >
+      <h2>Hemlock</h2>
+    </div>
+    <div class="col col-80"> 
+    
+      <h2 style="display: inline-block;">Photographer for family portrait</h2>
+      <h2 style="display: inline-block;float:right;margin-top: 0;">$100</h2>
+      <hr class="browse_hr">
+      <p class="browse_p">Need someone to take a family portrait. Thinking of outdoor, fun shoot but suggestions are welcomed.</p>
+      <img src="img/fb.jpg">
+      <img src="img/google.jpg" style="margin-left: 5px;">
+      <a class="bid_btn"href="">Bid</a>
+    </div>
+   </div>
+   <div class="row browse_row">
+    <div class="col col-20" style="padding: 0;">
+      <img src="img/person2.jpg" class="browse_list_img" >
+      <h2>Jenny</h2>
+    </div>
+    <div class="col col-80"> 
+    
+      <h2 style="display: inline-block;margin-top: 10px;">Weekly Part Time Cleaner Needed</h2>
+      <h2 style="display: inline-block;float:right;">$55</h2>
+      <hr class="browse_hr">
+      <p class="browse_p">Need weekly part-time cleaner to help with cleaning 1 bedroom apartment and ironing. Weekdays preferred. 3 hours per week.</p>
+      <img src="img/fb.jpg">
+      <img src="img/google.jpg" style="margin-left: 5px;">
+      <a class="send_btn" href="">Bid Send</a>
+    </div>
+   </div>
+   <div class="browse_row">
+   <div class="row ">
+    <div class="col col-20" style="padding: 0;">
+      <img src="img/person3.jpg" class="browse_list_img" >
+      <h2>vectori</h2>
+    </div>  
+    <div class="col col-80"> 
+    
+      <h2 style="display: inline-block;margin-top: 10px;">Need Part-time helper</h2>
+      <h2 style="display: inline-block;float:right;">$30</h2>
+      <hr class="browse_hr">
+      <p class="browse_p" ng-click="isbiddershow()">
+        I have a NG 4 room HDB flat which requires someone to
+        1) clean 2 toilets
+        2) vacuum + mop all floors
+        3) clean kitchen
+        4) clean fans (alternate weeks)
+        5) clean windows (alternate weeks)
+        6) wipe furniture
+        Starting from Mid May 2015. Please reply with your contact number, name and age. </p>
+      <img src="img/fb.jpg">
+      <img src="img/google.jpg" style="margin-left: 5px;">
+      <a class="bid_btn" ng-click="isbiddingshow()">Bid</a>
+    </div>
+    </div>
+   <div class="row" ng-if="bidders==true" style="margin-bottom: 15px;padding-top:15px;border-top: 1px solid #db9e36;">
+      <div>
+        <h2>Bids</h2>
+        <img src="img/person4.jpg" class="browse_list_img">
+        <img src="img/person5.jpg" class="browse_list_img" style="margin-left: 10px;">
+        <img src="img/person6.jpg" class="browse_list_img" style="margin-left: 10px;">
+        <img src="img/person4.jpg" class="browse_list_img" style="margin-left: 10px;">
+      </div>
+   </div>
+    
+<div class="row sample-show-hide" ng-if="bidding==true" style="padding-top:15px;border-top: 1px solid #db9e36;margin-bottom: 15px;">
+
+    <div class="col col-67" style="padding-right: 25px;">
+    <h2>Details of your bid</h2>
+      <textarea placeholder="" rows="5" cols="10" class="browse_textarea"></textarea>
+    </div>
+    <div class="col col-33">
+    <h2>Your bid price</h2>
+        <input type="text" id="browse_input">
+   </div>
+</div>
+
+</div>
+  <div class="tabs-striped tabs-color-assertive">
+    <div class="tabs" style="background:#ffd34e;">
+      <a class="tab-item active" href="#" style="border: none;padding-top: 8px;">
+        <img src="img/profile.svg">
+      </a>
+      <a class="tab-item" href="#" style="border: none;padding-top: 8px;">
+       <img src="img/pencil_write.svg">
+      </a>
+      <a class="tab-item" href="#" style="border: none;padding-top: 8px;">
+        <img src="img/mail.svg">
+      </a>
+    </div>
+  </div>
+</ion-view>
+  </body>
+</html>

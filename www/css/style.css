@@ -1,0 +1,65 @@
+/* Empty. Add your own CSS if you like */
+h2{ 
+  font-size: 18px;
+  color: #5e350d;
+}
+.browse_list_img { 
+  max-width: 55px;
+  max-height: 55px;
+  border-radius: 50%;
+}
+.browse_p{ 
+  cursor: pointer;
+  font-size: 14px;
+  color: #db9e36;}
+.browse_hr{  
+  border: none;
+  border-top: 1px solid #db9e3e;
+  margin-top: 0px;}  
+.bid_btn{
+  float: right;
+  background: #ec6b39;
+  padding: 6px;
+  width: 90px;
+  border-radius: 20px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  border: 2px solid #ffd34e;
+  cursor: pointer;
+}
+
+.send_btn{
+  float: right;
+  background: #ffb03b;
+  padding: 6px;
+  width: 90px;
+  border-radius: 20px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  border: 2px solid #ffd34e;}
+
+.browse_row{
+	border-bottom: 3px solid #db9e36;
+	padding: 15px 8px;
+	margin-bottom: 15px;
+}
+.browse_textarea{  
+	width: 100%;
+	border: 1px solid #ffd34e;
+	border-radius: 8px;
+	padding: 5px;
+	color: #ec6b39;
+}
+#browse_input{
+	width: 100%;
+	border: 1px solid #ffd34e;
+	border-radius: 8px;
+	padding: 5px;
+	color: #ec6b39;
+	}
