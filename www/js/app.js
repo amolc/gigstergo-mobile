@@ -1,173 +1,120 @@
-angular.module('ionicApp', ['ionic'])
+// Ionic Starter App
+
+// angular.module is a global place for creating, registering and retrieving Angular modules
+// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
+// the 2nd parameter is an array of 'requires'
+// 'starter.services' is found in services.js
+// 'starter.controllers' is found in controllers.js
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+
+.run(function($ionicPlatform) {
+  $ionicPlatform.ready(function() {
+    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+    // for form inputs)
+    if (window.cordova && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+    }
+    if (window.StatusBar) {
+      // org.apache.cordova.statusbar required
+      StatusBar.styleDefault();
+    }
+  });
+})
 
 .config(function($stateProvider, $urlRouterProvider) {
 
+  // Ionic uses AngularUI Router which uses the concept of states
+  // Learn more here: https://github.com/angular-ui/ui-router
+  // Set up the various states which the app can be in.
+  // Each state's controller can be found in controllers.js
   $stateProvider
-    .state('tabs', {
-      url: "/tab",
-      abstract: true,
-      templateUrl: "tabs.html"
-    })
-    .state('tabs.home', {
-      url: "/home",
-      views: {
-        'home-tab': {
-          templateUrl: "home.html",
-          controller: 'HomeTabCtrl'
-        }
-      }
-    })
-    .state('tabs.facts', {
-      url: "/facts",
-      views: {
-        'home-tab': {
-          templateUrl: "facts.html"
-        }
-      }
-    })
-    .state('tabs.facts2', {
-      url: "/facts2",
-      views: {
-        'home-tab': {
-          templateUrl: "facts2.html"
-        }
-      }
-    })
-    .state('tabs.about', {
-      url: "/about",
-      views: {
-        'about-tab': {
-          templateUrl: "about.html"
-        }
-      }
-    })
-    .state('tabs.navstack', {
-      url: "/navstack",
-      views: {
-        'about-tab': {
-          templateUrl: "nav-stack.html"
-        }
-      }
-    })
-    .state('tabs.contact', {
-      url: "/contact",
-      views: {
-        'contact-tab': {
-          templateUrl: "contact.html"
-        }
-      }
-    });
+
+  // setup an abstract state for the tabs directive
+    .state('tab', {
+    url: "/tab",
+    abstract: true,
+    templateUrl: "templates/tabs.html"
+  })
+
+  
 
 
-   $urlRouterProvider.otherwise("/tab/home");
-
-})
-
-.controller('HomeTabCtrl', function($scope) {
-  console.log('HomeTabCtrl');
-})
-
-.directive('fakeStatusbar', function() {
-  return {
-    restrict: 'E',
-    replace: true,
-    template: '<div class="fake-statusbar"><div class="pull-left">Carrier</div><div class="time">3:30 PM</div><div class="pull-right">50%</div></div>'
-  }
-})
-
-.directive('headerShrink', function($document) {
-    var fadeAmt;
-
-    var shrink = function(tabs, tabs_amt, subHeader, header, amt, dir) {
-      ionic.requestAnimationFrame(function() { 
-        // Threshold is equal to bar-height
-        var threshold = 44;
-        // Scrolling down
-        if(dir === 1) {
-          var _amt = Math.min(threshold, amt - threshold);
-        } 
-        // Scrolling up
-        else if(dir === -1) {
-          var _amt = Math.max(0, amt - threshold);
-        }
-        // The translation amounts should never be negative
-        _amt = _amt < 0 ? 0 : _amt;
-        amt = amt < 0 ? 0 : amt;
-        tabs_amt = tabs_amt < 0 ? 0 : tabs_amt; 
-        // Re-position the header
-        header.style[ionic.CSS.TRANSFORM] = 'translate3d(0,-' + _amt + 'px, 0)';
-        fadeAmt = 1 - _amt / threshold; 
-        for(var i = 0, j = header.children.length; i < j; i++) {
-          header.children[i].style.opacity = fadeAmt;
-        }
-        // Re-position the sub-header
-        subHeader.style[ionic.CSS.TRANSFORM] = 'translate3d(0,-' + amt + 'px, 0)';
-        // Re-position the tabs
-        tabs.style[ionic.CSS.TRANSFORM] = 'translate3d(0,' + tabs_amt + 'px, 0)';
-      });
-    };
-
-    return {
-      restrict: 'A',
-      link: function($scope, $element, $attr) {
-        var starty = 0;
-        var shrinkAmt;
-        var tabs_amt;
-        // Threshold is equal to bar-height + create-post height;
-        var threshold = 88;
-        // header
-        var header = $document[0].body.querySelector('.bar-header');
-        // sub-header
-        var subHeader = $document[0].body.querySelector('.bar-subheader');
-        var headerHeight = header.offsetHeight;
-        var subHeaderHeight = subHeader.offsetHeight;
-        // tabs
-        var tabs = $document[0].body.querySelector('.tabs');
-        var tabsHeight = tabs.offsetHeight;
-
-        var prev = 0
-        var delta = 0
-        var dir = 1
-        var prevDir = 1
-        var prevShrinkAmt = 0;
-        var prevTabsShrinkAmt = 0;
-        
-        $element.bind('scroll', function(e) {
-          // if negative scrolling (eg: pull to refresh don't do anything)
-          if(e.detail.scrollTop < 0)
-            return false;
-          // Scroll delta
-          delta = e.detail.scrollTop - prev;
-          // Claculate direction of scrolling
-          dir = delta >= 0 ? 1 : -1;
-          // Capture change of direction
-          if(dir !== prevDir) 
-            starty = e.detail.scrollTop;
-          // If scrolling up
-          if(dir === 1) {
-            // Calculate shrinking amount
-            shrinkAmt = headerHeight + subHeaderHeight - Math.max(0, (starty + headerHeight + subHeaderHeight) - e.detail.scrollTop);
-            // Calculate shrinking for tabs
-            tabs_amt = tabsHeight - Math.max(0, (starty + tabsHeight) - e.detail.scrollTop);
-            // Start shrink
-            shrink(tabs, tabs_amt, subHeader, header, Math.min(threshold, shrinkAmt), dir);
-            // Save prev shrink amount
-            prevShrinkAmt = Math.min(threshold, shrinkAmt);
-            prevTabsShrinkAmt = Math.min(tabsHeight, tabs_amt);
-          }
-          // If scrolling down
-          else {
-            // Calculate expansion amount
-            shrinkAmt = prevShrinkAmt - Math.min(threshold, (starty - e.detail.scrollTop));
-            // Calculate shrinking for tabs
-            tabs_amt = prevTabsShrinkAmt - Math.min(tabsHeight, (starty - e.detail.scrollTop));
-            // Start shrink
-            shrink(tabs, tabs_amt, subHeader, header, shrinkAmt, dir);
-          }
-          // Save prev states for comparison 
-          prevDir = dir;
-          prev = e.detail.scrollTop;
-        });
+  // Each tab has its own nav history stack:
+  .state('tab.dash', {
+    url: '/dash',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/tab-dash.html',
+        controller: 'DashCtrl'
       }
     }
-  });  
+  })
+
+  .state('tab.chats', {
+      url: '/chats',
+      views: {
+        'tab-chats': {
+          templateUrl: 'templates/tab-chats.html',
+          controller: 'ChatsCtrl'
+        }
+      }
+    })
+    .state('tab.chat-detail', {
+      url: '/chats/:chatId',
+      views: {
+        'tab-chats': {
+          templateUrl: 'templates/chat-detail.html',
+          controller: 'ChatDetailCtrl'
+        }
+      }
+    })
+
+ .state('tab.all', {
+    url: '/all',
+    views: {
+      'tab-all': {
+        templateUrl: 'templates/all.html',
+      }
+    }
+  })
+ .state('tab.mygigs', {
+    url: '/mygigs',
+    views: {
+      'tab-mygigs': {
+        templateUrl: 'templates/mygigs.html'
+      }
+    }
+  })
+ .state('tab.mybids', {
+    url: '/mybids',
+    views: {
+      'tab-mybids': {
+        templateUrl: 'templates/mybids.html'
+      }
+    }
+  })
+
+  .state('tab.login_signup_screen', {
+    url: '/login_signup_screen',
+    views: {
+      'login_signup_screen':{
+        templateUrl: 'templates/login_signup_screen.html',
+      }
+      }
+  })
+
+  .state('tab.account', {
+    url: '/account',
+    views: {
+      'tab-account': {
+        templateUrl: 'templates/tab-account.html',
+        controller: 'AccountCtrl'
+      }
+    }
+  });
+
+  // if none of the above states are matched, use this as the fallback
+  $urlRouterProvider.otherwise('/tab/dash');
+
+});
+  

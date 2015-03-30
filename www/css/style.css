@@ -1,37 +1,176 @@
-.fake-statusbar {
-  height: 20px;
-  max-height: 20px;
-  font-size: 12px;
-  box-sizing: border-box;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 11;
-  color: #fff;
-  padding: 2px 3px 3px 3px;
+/* Empty. Add your own CSS if you like */
+@font-face {
+  font-family: 'source_sans_prolight';
+  src: url('fonts/sourcesanspro-light-webfont.eot');
+  src: url('fonts/sourcesanspro-light-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/sourcesanspro-light-webfont.woff') format('woff'), url('fonts/sourcesanspro-light-webfont.ttf') format('truetype'), url('fonts/sourcesanspro-light-webfont.svg#source_sans_prolight') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
-.fake-statusbar .time {
-  position: absolute;
-  width: 100%;
+@font-face {
+  font-family: 'source_sans_proextralight';
+  src: url('fonts/sourcesanspro-extralight-webfont.eot');
+  src: url('fonts/sourcesanspro-extralight-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/sourcesanspro-extralight-webfont.woff') format('woff'), url('fonts/sourcesanspro-extralight-webfont.ttf') format('truetype'), url('fonts/sourcesanspro-extralight-webfont.svg#source_sans_proextralight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'source_sans_proregular';
+  src: url('fonts/sourcesanspro-regular-webfont.eot');
+  src: url('fonts/sourcesanspro-regular-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/sourcesanspro-regular-webfont.woff') format('woff'), url('fonts/sourcesanspro-regular-webfont.ttf') format('truetype'), url('fonts/sourcesanspro-regular-webfont.svg#source_sans_proregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'source_sans_prosemibold';
+  src: url('fonts/sourcesanspro-semibold-webfont.eot');
+  src: url('fonts/sourcesanspro-semibold-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/sourcesanspro-semibold-webfont.woff') format('woff'), url('fonts/sourcesanspro-semibold-webfont.ttf') format('truetype'), url('fonts/sourcesanspro-semibold-webfont.svg#source_sans_prosemibold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'source_sans_probold';
+  src: url('fonts/sourcesanspro-bold.eot');
+  src: url('fonts/sourcesanspro-bold.eot?#iefix') format('embedded-opentype'), url('fonts/sourcesanspro-bold.woff') format('woff'), url('fonts/sourcesanspro-bold.ttf') format('truetype'), url('fonts/sourcesanspro-bold.svg#source_sans_probold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'FuturaStd-Light';
+  src: url('fonts/FuturaStd-Light.otf');
+  src: url('fonts/FuturaStd-Light.otf?#iefix') format('embedded-opentype'), url('fonts/FuturaStd-Light.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h2{
+  font-size: 16px;
+  color: #5e350d;
+  margin-top: 5px;
+  font-family: 'source_sans_prosemibold';
+}
+.tabs .tab-item .icon.tab_1 {
+  background-repeat: no-repeat;
+  background-position: 50%;
   height: 100%;
+  background-image: url('../img/tab_1.png');
+  background-size:contain;
+  height: 30px;
+  margin-top: 8px;
+}
+.tabs .tab-item .icon.tab_2 {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  background-image: url('../img/tab_2.png');
+  background-size:contain;
+  height: 30px;
+  margin-top: 8px;
+}
+.tabs .tab-item .icon.tab_3{
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  background-image: url('../img/tab_3.png');
+  background-size:contain;
+  height: 30px;
+  margin-top: 8px;
+}
+.browse_list_img { 
+  max-width: 55px;
+  max-height: 55px;
+  border-radius: 50%;
+}
+.browse_p{ 
+  cursor: pointer;
+  font-size: 14px;
+  color: #db9e36;}
+.browse_hr{  
+  border: none;
+  border-top: 1px solid #db9e3e;
+  margin-top: 0px;}  
+.bid_btn{
+  float: right;
+  background: #ec6b39;
+  padding: 6px;
+  width: 90px;
+  border-radius: 20px;
+  display: inline-block;
   text-align: center;
-}
-.fake-statusbar .pull-left { float: left; }
-.fake-statusbar .pull-right { float: right; }
-
-.bar-header {
-  height: 64px !important;
-}
-.bar-header > *{
-  margin-top: 20px !important;
-}
-.bar-subheader {
-  top: 64px !important;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  border: 2px solid #ffd34e;
+  cursor: pointer;
 }
 
-.scroll-content{
-  top: 0 !important;
-  bottom: 0 !important;
-  padding-top: 44px !important;
+.send_btn{
+  float: right;
+  background: #ffb03b;
+  padding: 6px;
+  width: 90px;
+  border-radius: 20px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  border: 2px solid #ffd34e;}
+
+.browse_row{
+	border-bottom: 3px solid #db9e36;
+	padding: 15px 8px;
+	margin-bottom: 15px;
 }
+.browse_textarea{  
+	width: 100%;
+	border: 1px solid #ffd34e;
+	border-radius: 8px;
+	padding: 5px;
+	color: #ec6b39;
+}
+#browse_input{
+	width: 100%;
+	border: 1px solid #ffd34e;
+	border-radius: 8px;
+	padding: 5px;
+	color: #ec6b39;
+	}
+.tabs-positive > .tabs, .tabs.tabs-positive{background: #ffd34e;border-color: #ffd34e;}
+.bar.bar-positive{background-color: #ffd34e;border-color: #ffd34e;}
+.post_head{ 
+  font-family: 'source_sans_probold';
+  font-size: 20px;
+  border-bottom: 1px solid #ffd34e;
+  padding-bottom: 8px;
+}
+#post_input{
+  border: 1px solid #FFD34E;
+  width: 100%;
+  padding: 5px;
+  border-radius: 8px;
+}
+.post_gig_check{
+  padding-left: 50px;
+  border: none;
+  font-size: 16px;
+  color: #ffd34e;
+  font-family: 'source_sans_prosemibold';
+}
+#post_img{
+  position: absolute;
+  right: 10px;
+  bottom: 0;
+}
+.msg_name{
+  font-family: 'source_sans_probold';
+  font-size: 20px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+.item{ border-color: #ffd34e;}
+.msg_sender_name{
+  position: absolute;
+  bottom: 0px;
+  left: 7px;
+}
+.item-avatar .item-content{padding-left: 90px;}
