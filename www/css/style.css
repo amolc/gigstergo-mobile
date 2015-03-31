@@ -48,6 +48,7 @@ h2{
   margin-top: 5px;
   font-family: 'source_sans_prosemibold';
 }
+
 .tabs .tab-item .icon.tab_1 {
   background-repeat: no-repeat;
   background-position: 50%;
@@ -117,31 +118,36 @@ h2{
   border: 2px solid #ffd34e;}
 
 .browse_row{
-	border-bottom: 3px solid #db9e36;
-	padding: 15px 8px;
-	margin-bottom: 15px;
+  border-bottom: 3px solid #db9e36;
+  padding: 15px 8px;
+  margin-bottom: 15px;
 }
 .browse_textarea{  
-	width: 100%;
-	border: 1px solid #ffd34e;
-	border-radius: 8px;
-	padding: 5px;
-	color: #ec6b39;
+  width: 100%;
+  border: 1px solid #ffd34e;
+  border-radius: 8px;
+  padding: 5px;
+  color: #ec6b39;
 }
 #browse_input{
-	width: 100%;
-	border: 1px solid #ffd34e;
-	border-radius: 8px;
-	padding: 5px;
-	color: #ec6b39;
-	}
+  width: 100%;
+  border: 1px solid #ffd34e;
+  border-radius: 8px;
+  padding: 5px;
+  color: #ec6b39;
+  }
 .tabs-positive > .tabs, .tabs.tabs-positive{background: #ffd34e;border-color: #ffd34e;}
 .bar.bar-positive{background-color: #ffd34e;border-color: #ffd34e;}
 .post_head{ 
   font-family: 'source_sans_probold';
-  font-size: 20px;
+  font-size: 18px;
   border-bottom: 1px solid #ffd34e;
   padding-bottom: 8px;
+}
+.post_span{
+  float:left;font-family: 'source_sans_prosemibold';margin-right: 4px;
+  margin-top: 7px;
+  color: #5e350d;
 }
 #post_input{
   border: 1px solid #FFD34E;
@@ -154,7 +160,7 @@ h2{
   border: none;
   font-size: 16px;
   color: #ffd34e;
-  font-family: 'source_sans_prosemibold';
+  font-family: 'source_sans_probold';
 }
 #post_img{
   position: absolute;
@@ -163,14 +169,30 @@ h2{
 }
 .msg_name{
   font-family: 'source_sans_probold';
-  font-size: 20px;
+  font-size: 18px;
   margin-top: 5px;
   margin-bottom: 0px;
+  padding-bottom: 5px;
+
 }
 .item{ border-color: #ffd34e;}
-.msg_sender_name{
+.gigster_chat .msg_sender_name{
   position: absolute;
   bottom: 0px;
-  left: 7px;
+  left: 12px;
+  font-size: 14px;
 }
-.item-avatar .item-content{padding-left: 90px;}
+.item-avatar .item-content{padding-left: 90px; padding-top: 10px;}
+.gigster_chat{
+     border-left: medium none;
+    border-right: medium none;
+    border-top: medium none;
+    border-bottom: 1px solid #eed1a0;
+    margin: 0 10px;
+}
+.skill_p{
+  font-size:11px;
+  margin-left:28px;
+  margin-top:-15px;
+  font-family: 'source_sans_proregular';
+}
