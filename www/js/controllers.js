@@ -1,6 +1,6 @@
 angular.module('starter.controllers', ['ngRoute'])
 
-.controller('DashCtrl', function($scope) {
+.controller('DashCtrl', function($scope,$state,$ionicPopup, $timeout) {
 $scope.bidders=false;
 $scope.bidding=false;
 $scope.isbiddershow=function(){
@@ -18,7 +18,21 @@ $scope.isbiddingshow=function(){
 	}
 };
 
+$scope.bidbtnclick=function(){
+  $state.go('login_signup_screen');
+};
 
+
+   $scope.showAlert = function() {
+    console.log('hi');
+     var alertPopup = $ionicPopup.alert({
+       title: 'Forget Password?',
+       template: 'Enter your email address and we ll send you instructions on how to create a new password.'
+     });
+     alertPopup.then(function(res) {
+     
+     });
+   };
 
 
 })

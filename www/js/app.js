@@ -94,11 +94,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-  .state('tab.login_signup_screen', {
+  .state('login_signup_screen', {
     url: '/login_signup_screen',
     views: {
       'login_signup_screen':{
-        templateUrl: 'templates/login_signup_screen.html',
+        templateUrl: 'templates/login_signup_screen.html'
       }
       }
   })
