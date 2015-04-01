@@ -1,11 +1,11 @@
 <ion-view view-title="Chats">
   <ion-content>
     <div class="row">
-    <div class="col" style="border-bottom: 1px solid #ffd34e;margin:2px 8px;">
-      <span class="post_span"><i class="icon  ion-chevron-left" style="font-size:18px;margin-right:5px;"></i></span>
-      <h2 class="msg_name" style="float:right;">Chats</h2>
-    </div> 
-  </div>
+      <div class="col" style="border-bottom: 1px solid #ffd34e;padding:px 0px;">
+        <span class="post_span"><i class="icon  ion-chevron-left" style="font-size:18px;margin-right:5px;"></i></span>
+        <h2 class="msg_name" style="float:right;">Chats</h2>
+      </div> 
+    </div>
     <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-right gigster_chat" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
         <img ng-src="{{chat.face}}" style="top: 7px;">
