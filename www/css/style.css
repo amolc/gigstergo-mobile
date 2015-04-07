@@ -353,3 +353,168 @@ h2{
 .popup{
     background: #232323;
 }
+
+/*Bidding Section*/
+.bidding-pages{
+  font-family: 'source_sans_prosemibold';
+}
+.bidding-pages ul li{
+  margin-top:15px;
+  margin-left:20px;
+  margin-bottom:10px;
+  font-size: 17px;
+  padding:5px;
+  display: inline-block;
+}
+.bidding-pages a{
+  text-decoration: none;
+  color:#5E350D;
+}
+.bidding-pages a:hover{
+  border-bottom: 3px solid #DB9E36;
+}
+
+.bidding-border{
+  border-bottom: 3px solid #DB9E36;
+}
+.profile-icon{
+  float:left;
+  border-radius: 50%;
+  width:20%;
+  height:20%;
+  margin-left:10px;
+  padding-top:10px;
+}
+.content-bid{
+  width:66%; 
+  float:left;
+  margin-left:15px;
+  margin-top:-9px;
+}
+.title-bid{
+  font-family: 'Roboto Condensed';
+  color:#5E350D;
+  font-weight:bold;
+  font-size:11px;
+}
+.content{
+  text-align:justify;
+  font-size: 10px
+}
+.border-line{
+  margin-top:-5px;
+  border-bottom: 1px solid #db9e36;
+}
+.social-networks ul li{
+  display:inline-block;  
+}
+
+.social-networks ul li a{
+  padding-right:10px; 
+}
+
+.social-networks img{
+  width:15%;
+  height:13%;
+}
+
+.bid-button{
+  position:absolute;
+  margin-top:-39px;
+  right:24px;
+  border-top-width:2px;
+  border-bottom-width:2px;
+  border-left-width:2px;
+  border-right-width:2px;
+  border-top-left-radius:16px;
+  border-top-right-radius:16px;
+  border-bottom-right-radius:16px;
+  border-bottom-left-radius:16px;
+  border-color:#ffd34e;
+  border-style:solid;
+  background-color:#ec6b39;
+  color:#fcfff5;
+  font-size:14px;
+  font-weight:bold;
+  font-family:'Roboto';
+  text-align:center;
+  width:64px;
+  height:32px;
+}
+
+.search-icon{
+  width:42px;
+  height:31px;
+  position:absolute;
+  top:10px;
+  left:250px
+}
+
+.user-name{
+  font-weight: bold; 
+  color: rgb(94, 53, 13);
+  font-size:12px;
+  right:60px;
+  position:relative;
+  top:80px;
+}
+
+.user-bids{
+  margin-bottom:10px;
+}
+
+.content-div{
+  text-align:left;
+  font-family:Arial;
+  width:217px;
+  height:47px;
+}
+
+.content-span{
+  font-size: 14px;
+  font-weight: bold; 
+  color: rgb(94, 53, 13);
+}
+
+.content-desc{
+  color: rgb(94, 53, 13);
+}
+
+.bid-text{
+  position:absolute;
+  top:3px;
+  left:15px;
+}
+
+.bid-sent{
+  position:absolute;
+  margin-top:-39px;
+  right:24px;
+  border-top-width:2px;
+  border-bottom-width:2px;
+  border-left-width:2px;
+  border-right-width:2px;
+  border-top-left-radius:16px;
+  border-top-right-radius:16px;
+  border-bottom-right-radius:16px;
+  border-bottom-left-radius:16px;
+  border-color:#ffd34e;
+  border-style:solid;
+  background-color:rgba(255,176,59,0.75);
+  color:#5e350d;
+  font-size:12px;
+  font-weight:bold;
+  font-family:'Roboto';
+  text-align:center;
+  width:64px;
+  height:32px;
+  position:absolute;
+}
+
+.sent-text{
+  margin-top:2px;
+}
+
+.trash{
+  margin-left:31px;
+}
