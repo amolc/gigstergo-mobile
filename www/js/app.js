@@ -111,7 +111,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         controller: 'AccountCtrl'
       }
     }
+  })
+
+
+  //Additional Page for User Bidding
+
+  .state('tab.bidding' , {
+    url: '/userBids',
+    views: {
+      'tab-account':{
+        templateUrl: 'templates/user_bidding.html'
+      }
+    }
   });
+
+
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
